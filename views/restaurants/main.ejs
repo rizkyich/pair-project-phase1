@@ -21,7 +21,7 @@
   <div class="container">
     <div class="center-page">
       <div class="flex">
-        <%restaurants.forEach(restaurant =>{ %>
+        <%restaurants.forEach((restaurant, index) =>{ %>
         <div class="card" style="width: 18rem; margin: 2rem">
           <div style="height: 65%">
             <img class="card-img-top"
@@ -32,7 +32,10 @@
             <h5 class="card-title"><%= restaurant.name %></h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-            <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-primary">See >></a>
+            <div class="flex">
+              <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-primary">See >></a>
+              <p><%= restaurant.rating %></p>
+            </div>
           </div>
         </div>
 
