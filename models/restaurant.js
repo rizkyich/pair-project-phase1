@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   Restaurant.associate = function (models) {
     // associations can be defined here
 
-    Restaurant.belongsTo(models.User, { through: models.UserRestaurant })
+    Restaurant.belongsToMany(models.User, { through: models.UserRestaurant })
   };
   return Restaurant;
 };

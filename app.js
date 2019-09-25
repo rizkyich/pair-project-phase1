@@ -11,5 +11,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/restaurants', require('./routes/RestaurantRoute'))
+app.use('/user', require('./routes/UserRoute'))
 
 app.listen(PORT, () => console.log(`SERVER LISTEN ON PORT: ${PORT}`))
