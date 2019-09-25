@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
 
   class Restaurant extends Model {
     static getByLoc(location) {
-      return Restaurant.findAll({where: {city: location}})   
+      return Restaurant.findAll({ where: { city: location } })
     }
 
   }
@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }, { sequelize });
   Restaurant.associate = function (models) {
     // associations can be defined here
+
+    Restaurant.belongsTo(models.User, { through: models.UserRestaurant })
   };
   return Restaurant;
 };
