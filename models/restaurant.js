@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
 
   class Restaurant extends Model {
     static getByLoc(location) {
-      return Restaurant.findAll({where: {city: locations}})   
+      return Restaurant.findAll({where: {city: location}})   
     }
 
   }
