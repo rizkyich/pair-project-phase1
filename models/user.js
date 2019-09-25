@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'Username could not be empty'
         },
+
         isUnique: function (value, cb) {
           User.findOne({ where: { username: value }, id: { [Op.ne]: this.dataValues.id } })
             .then(user => {
@@ -63,6 +64,10 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'Phone number cannot be empty'
         },
+        isNumeric: {
+          args: true,
+          msg: 'Phone must only contain number'
+        },
         isUnique: function (value, cb) {
           User.findOne({ where: { phone: value }, id: { [Op.ne]: this.dataValues.id } })
             .then(user => {
@@ -79,7 +84,12 @@ module.exports = (sequelize, DataTypes) => {
 
       }
     },
-    password: DataTypes.STRING
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+
+      }
+    }
   }, {
     sequelize, hooks: {
       beforeCreate: (user) => {

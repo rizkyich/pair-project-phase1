@@ -31,7 +31,7 @@ class UserController {
                         email: user.email,
                         phone: user.phone
                     }
-                    res.render('users/dashboard', { user })
+                    res.redirect('/user/dashboard')
                 } else {
                     res.redirect('/user/login?err=wrong username or password')
                 }
@@ -57,6 +57,16 @@ class UserController {
     }
 
 
+    static dashboard(req, res) {
+        User.findByPk(req.session.user.id, { include: [Restaurant] })
+            .then(user => {
+                // res.send(user)
+                res.render('users/dashboard', { user })
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
 }
 
 module.exports = UserController

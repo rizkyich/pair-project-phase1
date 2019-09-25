@@ -1,5 +1,16 @@
 const express = require('express')
+const session = require('express-session')
 const app = express()
+const dateFormat = require('./helpers/dateFormat')
+
+app.use(session({
+  secret: 'keyboard',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
+
+app.locals.dateFormat = dateFormat
 
 const PORT = 3000
 
