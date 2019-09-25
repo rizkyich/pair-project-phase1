@@ -6,7 +6,8 @@ class RestaurantController {
       Restaurant
         .getByLoc(req.query.location)
         .then(restaurants => {
-          res.send(restaurants)
+          res.render('restaurants/main', {restaurants})
+          // res.send(restaurants)
         })
         .catch(err => {
           res.send(err)
@@ -15,12 +16,18 @@ class RestaurantController {
       Restaurant
         .findAll()
         .then(restaurants => {
-          res.send(restaurants)
+          // res.send(restaurants)
+          res.render('restaurants/main', {restaurants})
+          
         })
         .catch(err => {
           res.send(err)
         })
     }
+  }
+
+  static review(req, res) {
+    
   }
 }
 
