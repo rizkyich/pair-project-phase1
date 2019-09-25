@@ -1,0 +1,407 @@
+[
+  {
+    "name": "Limestones Bali Restaurant",
+    "details": {
+      "address": "Jl. Bedahulu No. 25, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6335208758",
+      "longitude": "115.2170904726",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/limestones-bali-restaurant-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Pizza Hut",
+    "details": {
+      "address": "Jl. Gatot Subroto, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6359588814",
+      "longitude": "115.2181237936",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/pizza-hut-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Sushi Tsuki",
+    "details": {
+      "address": "Jl. Gatot Subroto Barat No. 18G, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6358892717",
+      "longitude": "115.2191138640",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/sushi-tsuki-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Richeese Factory",
+    "details": {
+      "address": "Jl. Gatot Subroto No. 449, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6387356363",
+      "longitude": "115.2085392550",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/richeese-factory-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Domino's Pizza",
+    "details": {
+      "address": "Jl. Gatot Subroto Tengah No. 306 C, Denpasar, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6356356933",
+      "longitude": "115.2197200432",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/dominos-pizza-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Ms.Crackles",
+    "details": {
+      "address": "Jl. Gatot Subroto Barat No.335, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6361713568",
+      "longitude": "115.2164899930",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/mscrackles-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "J.Co Donuts & Coffee",
+    "details": {
+      "address": "SE Supermarket, Jl. Gatot Subroto Tengah, Denpasar Utara, Bali",
+      "locality": "SE Supermarket, Denpasar",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6365790704",
+      "longitude": "115.2145839483",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "SE Supermarket, Denpasar, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/jco-donuts-coffee-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Warung Sushi On The Street",
+    "details": {
+      "address": "Jl. Gatot Subroto Barat No. 354A, Denpasar Utara, Bali",
+      "locality": "Denpasar Utara",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6360370000",
+      "longitude": "115.2155510000",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Denpasar Utara, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/warung-sushi-on-the-street-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "BreadTalk",
+    "details": {
+      "address": "SE Supermarket, Jl. Gatot Subroto Tengah, Denpasar Utara, Bali",
+      "locality": "SE Supermarket, Denpasar",
+      "city": "Bali",
+      "city_id": 170,
+      "latitude": "-8.6364554305",
+      "longitude": "115.2147770673",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "SE Supermarket, Denpasar, Bali"
+    },
+    "photo_url": "https://www.zomato.com/bali/breadtalk-denpasar-utara/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Dope Burger & Co.",
+    "details": {
+      "address": "Jl. Teuku Cik Ditiro No. 25, Menteng, Jakarta",
+      "locality": "Menteng",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1971506822",
+      "longitude": "106.8371154741",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Menteng, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/dope-burger-co-menteng/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Cia'Jo Grill Manado",
+    "details": {
+      "address": "Jl. Kwitang Raya No. 29, Senen, Jakarta",
+      "locality": "Senen",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1814782230",
+      "longitude": "106.8383201212",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Senen, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/ciajo-grill-manado-senen/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Plataran Menteng",
+    "details": {
+      "address": "Jl. H.O.S. Cokroaminoto No. 42, Menteng, Jakarta",
+      "locality": "Menteng",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1917095893",
+      "longitude": "106.8285592273",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Menteng, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/plataran-menteng-menteng/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Bunga Rampai",
+    "details": {
+      "address": "Jl. Teuku Cik Ditiro No. 35, Menteng, Jakarta",
+      "locality": "Menteng",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1985232793",
+      "longitude": "106.8371067569",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Menteng, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/bunga-rampai-menteng/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Giyanti Coffee Roastery",
+    "details": {
+      "address": "Jl. Surabaya No. 20, Cikini, Jakarta",
+      "locality": "Cikini",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1986909372",
+      "longitude": "106.8396937475",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Cikini, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/giyanti-coffee-roastery-cikini/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Maple & Oak",
+    "details": {
+      "address": "De Ritz Building, Lantai Ground, Jl. HOS. Cokroaminoto No. 91, Menteng, Jakarta",
+      "locality": "De Ritz Building, Menteng",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1979643081",
+      "longitude": "106.8286889792",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "De Ritz Building, Menteng, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/maple-oak-menteng/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "YABAI",
+    "details": {
+      "address": "De Ritz Building, Jl. HOS Cokroaminoto No. 91, Menteng, Jakarta 10310",
+      "locality": "De Ritz Building, Menteng",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1979896401",
+      "longitude": "106.8287248537",
+      "zipcode": "10310",
+      "country_id": 94,
+      "locality_verbose": "De Ritz Building, Menteng, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/yabai-menteng/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Hello Sunday",
+    "details": {
+      "address": "Metropole 21 Lantai 2, Jl. Pegangsaan Timur No. 21, Cikini, Jakarta",
+      "locality": "Metropole 21, Cikini",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.2000301989",
+      "longitude": "106.8434538692",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Metropole 21, Cikini, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/hello-sunday-1-cikini/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Paradigma",
+    "details": {
+      "address": "Jl. Pegangsaan Barat No. 4, Cikini, Jakarta",
+      "locality": "Cikini",
+      "city": "Jakarta",
+      "city_id": 74,
+      "latitude": "-6.1974566670",
+      "longitude": "106.8399167061",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Cikini, Jakarta"
+    },
+    "photo_url": "https://www.zomato.com/jakarta/paradigma-cikini/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Morgy Coffee",
+    "details": {
+      "address": "Jl. Anggrek No. 46, Riau, Bandung",
+      "locality": "Riau",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9124045436",
+      "longitude": "107.6297193021",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Riau, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/morgy-coffee-riau/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "The Larder at 55",
+    "details": {
+      "address": "Jl. Gandapura No. 55, Sumurbandung, Bandung",
+      "locality": "Sumurbandung",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9133794283",
+      "longitude": "107.6261576638",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Sumurbandung, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/the-larder-at--sumurbandung/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Blue Doors",
+    "details": {
+      "address": "Jl. Gandapura No. 61, Sumurbandung, Bandung",
+      "locality": "Sumurbandung",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9127377154",
+      "longitude": "107.6264466718",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Sumurbandung, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/blue-doors-sumurbandung/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Suis Butcher Steak House",
+    "details": {
+      "address": "Jl. L.L.R.E. Martadinata No. 201, Riau, Bandung",
+      "locality": "Riau",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9128608658",
+      "longitude": "107.6288096979",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Riau, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/suis-butcher-steak-house-riau/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Hakata Ikkousha",
+    "details": {
+      "address": "Jl. L.L.R.E. Martadinata No. 172, Sumurbandung, Bandung",
+      "locality": "Sumurbandung",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9155440000",
+      "longitude": "107.6294260000",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Sumurbandung, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/hakata-ikkousha-sumurbandung/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "The 18th Restaurant & Lounge - The Trans Luxury Hotel",
+    "details": {
+      "address": "The Trans Luxury Hotel, Jl. Gatot Subroto No. 289, Buahbatu, Bandung 40273",
+      "locality": "Buahbatu",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9271440000",
+      "longitude": "107.6360400000",
+      "zipcode": "40273",
+      "country_id": 94,
+      "locality_verbose": "Buahbatu, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/the-18th-restaurant-lounge-the-trans-luxury-hotel-buahbatu/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Sushi Tei",
+    "details": {
+      "address": "Trans Studio Mall, Lantai Ground, Jl. Jendral Gatot Subroto No. 289, Buahbatu, Bandung",
+      "locality": "Trans Studio Mall, Buahbatu",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9264661209",
+      "longitude": "107.6358836889",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Trans Studio Mall, Buahbatu, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/sushi-tei-buahbatu/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Let's Go Gelato",
+    "details": {
+      "address": "Jl. Bengawan No. 29, Riau, Bandung",
+      "locality": "Riau",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9115158623",
+      "longitude": "107.6312609017",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Riau, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/lets-go-gelato-riau/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  },
+  {
+    "name": "Parit 9 Seafood",
+    "details": {
+      "address": "Jl. Anggrek No. 61, Riau, Bandung",
+      "locality": "Riau",
+      "city": "Bandung",
+      "city_id": 11052,
+      "latitude": "-6.9105948939",
+      "longitude": "107.6305812970",
+      "zipcode": "",
+      "country_id": 94,
+      "locality_verbose": "Riau, Bandung"
+    },
+    "photo_url": "https://www.zomato.com/bandung/parit-9-seafood-riau/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop"
+  }
+]
