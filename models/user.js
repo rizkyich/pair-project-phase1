@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, { sequelize });
   User.associate = function (models) {
     // associations can be defined here
-    User.belongsTo(models.Restaurant, { through: models.UserRestaurant })
+    User.belongsToMany(models.Restaurant, { through: models.UserRestaurant })
   };
   return User;
 };

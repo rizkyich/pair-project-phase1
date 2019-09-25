@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model
 
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   UserRestaurant.init({
     UserId: DataTypes.INTEGER,
     RestaurantId: DataTypes.INTEGER,
-    reiew: DataTypes.STRING,
+    review: DataTypes.STRING,
     ratingUser: DataTypes.INTEGER
   }, {sequelize});
   UserRestaurant.associate = function (models) {
