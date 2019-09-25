@@ -2,6 +2,7 @@ const { UserRestaurant } = require('../models')
 
 class UserRestaurantController {
   static main(req, res) {
+    console.log('masuk')
     res.render('restaurants/add')
   }
   

@@ -13,14 +13,7 @@
             <div class="card">
               <div class="card-body">
                 <h2>Add Teacher</h2>
-                <% if(err){ 
-                  err.errors.forEach(error => { %>
-                <div class="alert alert-danger" role="alert">
-                  <%= error.message %>
-                </div>
-                <%    })            
-                  
-               } %>
+               
                 <form method="POST">
                   <div class="form-group">
                     <label for="first_name">Review</label>
