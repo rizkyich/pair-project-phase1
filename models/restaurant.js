@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     static getByLoc(location) {
       return Restaurant.findAll({ where: { city: location } })
     }
-
   }
 
   Restaurant.init({

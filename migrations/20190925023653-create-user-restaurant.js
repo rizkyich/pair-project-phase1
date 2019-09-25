@@ -14,7 +14,7 @@ module.exports = {
       RestaurantId: {
         type: Sequelize.INTEGER
       },
-      reiew: {
+      review: {
         type: Sequelize.STRING
       },
       ratingUser: {
