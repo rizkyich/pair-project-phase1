@@ -9,7 +9,28 @@ module.exports = (sequelize, DataTypes) => {
     RestaurantId: DataTypes.INTEGER,
     review: DataTypes.STRING,
     ratingUser: DataTypes.INTEGER
-  }, {sequelize});
+  }, {sequelize,
+  hooks: {
+    afterCreate: (userRestaurant) => {
+      let sum 
+      let rate = 0
+      UserRestaurant
+        .findAll({where: {RestaurantId: userRestaurant.RestaurantId}})
+        .then(resto => {
+          resto.forEach(el => {
+            rate += el.ratingUser
+          })
+          sum = resto.length
+          return sequelize.models.Restaurant.update({rating: rate / sum})
+        })
+        .then(() => {
+          
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }});
   UserRestaurant.associate = function (models) {
     // associations can be defined here
   };

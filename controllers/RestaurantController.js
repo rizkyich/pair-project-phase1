@@ -1,5 +1,5 @@
 const { Restaurant, UserRestaurant, User } = require('../models')
-
+const sequelize = require('sequelize')
 class RestaurantController {
   static listAll(req, res) {
     if (req.query.location) {
@@ -13,12 +13,16 @@ class RestaurantController {
           res.send(err)
         })
     } else {
+    let total = []
       Restaurant
-        .findAll()
+        .findAll({
+          include: [{
+            model: User
+          }]
+        })
         .then(restaurants => {
-          console.log('masuk')
           // res.send(restaurants)
-          res.render('restaurants/main', { restaurants })
+          res.render('restaurants/main', { restaurants, total })
 
         })
         .catch(err => {
