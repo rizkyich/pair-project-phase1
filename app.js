@@ -10,7 +10,6 @@ app.use(session({
   cookie: { secure: false }
 }))
 
-app.locals.dateFormat = dateFormat
 
 const averageRating = require('./helpers/averageRating')
 const PORT = 3000
@@ -18,6 +17,7 @@ const PORT = 3000
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.locals.averageRating = averageRating
+app.locals.dateFormat = dateFormat
 
 app.get('/', (req, res) => {
   res.render('home')
