@@ -17,4 +17,6 @@ route.post('/register', UserController.register)
 
 route.get('/dashboard', isLogin, UserController.dashboard)
 
+route.get('/logout', isLogin, UserController.logout)
+
 module.exports = route

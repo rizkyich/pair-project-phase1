@@ -19,6 +19,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">Register</h5>
                             <br>
+                            <% err.forEach(error => { %>
+                            <p style="color: red"><%=error%></p>
+                            <% });%>
                             <form class="form-signin" method="POST">
                                 <div class="form-label-group">
                                     <label for="username">Username</label>
