@@ -6,14 +6,14 @@ class RestaurantController {
       Restaurant
         .getByLoc(req.query.location)
         .then(restaurants => {
-          res.render('restaurants/main', { restaurants })
+          console.log(req.query.location)
+          res.render('restaurants/main', { restaurants, location: req.query.location })
           // res.send(restaurants)
         })
         .catch(err => {
           res.send(err)
         })
     } else {
-      let total = []
       Restaurant
         .findAll({
           include: [{
@@ -22,7 +22,7 @@ class RestaurantController {
         })
         .then(restaurants => {
           // res.send(restaurants)
-          res.render('restaurants/main', { restaurants, total })
+          res.render('restaurants/main', { restaurants, location: undefined })
 
         })
         .catch(err => {
@@ -31,22 +31,40 @@ class RestaurantController {
     }
   }
 
-  static review(req, res) {
-    const { id } = req.params
+  static topRated(req, res) {
     Restaurant
-      .findByPk(id, {
-        include: {
+      .findAll({ order: [['rating', 'DESC']] , 
+        include: [{
           model: User
-        }
+        }]
       })
-      .then(restaurant => {
-        // res.send(restaurant)
-        res.render('restaurants/review', { restaurant })
+      .then(restaurants => {
+        // res.send(restaurants)
+        res.render('restaurants/main', { restaurants, location: undefined })
+
       })
       .catch(err => {
         res.send(err)
       })
-  }
+  
+}
+
+  static review(req, res) {
+  const { id } = req.params
+  Restaurant
+    .findByPk(id, {
+      include: {
+        model: User
+      }
+    })
+    .then(restaurant => {
+      // console.log(restaurant)
+      res.render('restaurants/review', { restaurant })
+    })
+    .catch(err => {
+      res.send(err)
+    })
+}
 }
 
 module.exports = RestaurantController

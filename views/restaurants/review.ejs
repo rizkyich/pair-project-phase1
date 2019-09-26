@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
+    body {
+      /* background-color: blue; */
+      background-image: url("/img/pattern.png");
+    }
+
     .flex {
       display: flex;
       justify-content: center;
@@ -18,63 +23,64 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="flex">
 
-      <div class="card" style="width: 30rem;">
-        <img class="card-img-top"
-          src="<%= restaurant.photos_url !== ''  ? restaurant.photos_url : 'https://images.unsplash.com/photo-1547424800-ab5e62f6ff8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' %>"
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><%= restaurant.name %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+    <div class="container">
+      <div class="flex">
+  
+        <div class="card" style="width: 30rem;">
+          <img class="card-img-top"
+            src="<%= restaurant.photos_url !== ''  ? restaurant.photos_url : 'https://images.unsplash.com/photo-1547424800-ab5e62f6ff8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' %>"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= restaurant.name %></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Address : <%= restaurant.address %></li>
+            <li class="list-group-item">City : <%= restaurant.city %></li>
+            <li class="list-group-item">Rating : <%=restaurant.rating%></li>
+          </ul>
+          <div class="card-body">
+            <a href="/restaurants/<%=restaurant.id%>/reviews/add" class="card-link">Add Review</a>
+          </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Address : <%= restaurant.address %></li>
-          <li class="list-group-item">City : <%= restaurant.city %></li>
-          <li class="list-group-item">Rating : <%=restaurant.rating%></li>
-        </ul>
-        <div class="card-body">
-          <a href="/restaurants/<%=restaurant.id%>/reviews/add" class="card-link">Add Review</a>
+        <div class="map">
+          <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDZNuv0M8wfRCTAWLVUKHWNKZAWRB60WBI
+              &q=<%= restaurant.latitude + ',' + restaurant.longitude%>" allowfullscreen>
+          </iframe>
         </div>
       </div>
-      <div class="map">
-        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDZNuv0M8wfRCTAWLVUKHWNKZAWRB60WBI
-            &q=<%= restaurant.latitude + ',' + restaurant.longitude%>" allowfullscreen>
-        </iframe>
+  
+      <% if (!restaurant.dataValues.Users[0]) {%>
+      <div class="card text-center">
+        <div class="card-header">
+          No Reviews
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">Go Add Something!</p>
+        </div>
+        <div class="card-footer text-muted">
+  
+        </div>
       </div>
+      <%}else {%>
+      <% restaurant.dataValues.Users.forEach(user => {%>
+      <div class="card">
+        <div class="card-header">
+          <%=user.username %>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p><%=user.dataValues.UserRestaurant.review%></p>
+            <footer class="blockquote-footer">rating : <%=user.dataValues.UserRestaurant.getStars()%> </footer>
+          </blockquote>
+        </div>
+      </div>
+      <%})%>
+      <%}%>
     </div>
-
-    <% if (!restaurant.dataValues.Users[0]) {%>
-    <div class="card text-center">
-      <div class="card-header">
-        No Reviews
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">Go Add Something!</p>
-      </div>
-      <div class="card-footer text-muted">
-
-      </div>
-    </div>
-    <%}else {%>
-    <% restaurant.dataValues.Users.forEach(user => {%>
-    <div class="card">
-      <div class="card-header">
-        <%=user.username %>
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p><%=user.dataValues.UserRestaurant.review%></p>
-          <footer class="blockquote-footer">rating : <%=user.dataValues.UserRestaurant.getStars()%> </footer>
-        </blockquote>
-      </div>
-    </div>
-    <%})%>
-    <%}%>
-  </div>
 </body>
 
 </html>

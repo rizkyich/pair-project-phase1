@@ -11,12 +11,13 @@ app.use(session({
 }))
 
 
-const averageRating = require('./helpers/averageRating')
+const convertStar = require('./helpers/convertStar')
 const PORT = 3000
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
-app.locals.averageRating = averageRating
+app.use(express.static('public'))
+app.locals.convertStar = convertStar
 app.locals.dateFormat = dateFormat
 
 app.get('/', (req, res) => {

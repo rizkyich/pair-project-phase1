@@ -24,8 +24,12 @@
                 <input type="text-area" class="form-control" name="review">
               </div>
               <div class="form-group">
-                <label for="last_name">Rating</label>
-                <input type="integer" class="form-control" name="ratingUser">
+
+                <select name="ratingUser" id="SubjectId" class="form-control">
+                  <% for(let i = 0; i < 5; i++) { %>
+                  <option value="<%= i+1 %>"><%= convertStar(i+1) %></option>
+                  <% } %>
+                </select>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-sm btn-info">Save</button>

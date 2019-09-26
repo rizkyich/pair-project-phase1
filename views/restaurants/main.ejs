@@ -9,10 +9,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
+    body {
+      /* background-color: blue; */
+      background-image: url("/img/pattern.png");
+    }
+
     .flex {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    .card {
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   </style>
 </head>
@@ -41,6 +51,9 @@
           <a href="/restaurants?location=Jakarta">Jakarta</a>|
           <a href="/restaurants?location=Bandung">Bandung</a>|
           <a href="/restaurants?location=Bali">Bali</a>|
+        </div>
+        <div>
+          <a href="<%= location ? `restaurants?location=${location}/topRate` : 'restaurants/topRate'%>" class="btn btn-sm btn-primary">Top Rated</a>
         </div>
       </div>
       <div class="flex">
