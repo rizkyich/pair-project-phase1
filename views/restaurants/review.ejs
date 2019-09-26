@@ -39,7 +39,12 @@
           <li class="list-group-item">Rating : <%=restaurant.rating%></li>
         </ul>
         <div class="card-body">
+          <% if(loginStatus){ %>
           <a href="/restaurants/<%=restaurant.id%>/reviews/add" class="card-link">Add Review</a>
+          <% } else { %>
+          <a href="/user/login?err=you have to login first" class="card-link">Add Review</a>
+
+          <% } %>
         </div>
       </div>
       <div class="map" style="margin-left: 1em">
