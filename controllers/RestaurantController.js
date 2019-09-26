@@ -1,12 +1,17 @@
 const { Restaurant, UserRestaurant, User } = require('../models')
 const sequelize = require('sequelize')
 class RestaurantController {
+
   static listAll(req, res) {
+    let loginStatus = false
+    if (req.session.user) {
+      loginStatus = true
+    }
     if (req.query.location) {
       Restaurant
         .getByLoc(req.query.location)
         .then(restaurants => {
-          res.render('restaurants/main', { restaurants })
+          res.render('restaurants/main', { restaurants, loginStatus })
           // res.send(restaurants)
         })
         .catch(err => {
@@ -22,7 +27,7 @@ class RestaurantController {
         })
         .then(restaurants => {
           // res.send(restaurants)
-          res.render('restaurants/main', { restaurants, total })
+          res.render('restaurants/main', { restaurants, total, loginStatus })
 
         })
         .catch(err => {
@@ -32,6 +37,11 @@ class RestaurantController {
   }
 
   static review(req, res) {
+    let loginStatus = false
+    if (req.session.user) {
+      loginStatus = true
+    }
+    console.log(loginStatus)
     const { id } = req.params
     Restaurant
       .findByPk(id, {
@@ -41,7 +51,7 @@ class RestaurantController {
       })
       .then(restaurant => {
         // res.send(restaurant)
-        res.render('restaurants/review', { restaurant })
+        res.render('restaurants/review', { restaurant, loginStatus })
       })
       .catch(err => {
         res.send(err)

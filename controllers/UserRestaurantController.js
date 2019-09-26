@@ -2,10 +2,17 @@ const { UserRestaurant } = require('../models')
 
 class UserRestaurantController {
   static main(req, res) {
-    res.render('restaurants/add')
+    let loginStatus = false
+    if (req.session.user) {
+      loginStatus = true
+    }
+    const { id } = req.params
+
+    res.render('restaurants/add', { id, loginStatus })
   }
 
   static addReview(req, res) {
+
     UserRestaurant
       .create({
         UserId: req.session.user.id,

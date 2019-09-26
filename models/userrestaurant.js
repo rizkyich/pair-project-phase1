@@ -2,7 +2,23 @@
 module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model
 
-  class UserRestaurant extends Model { }
+  class UserRestaurant extends Model {
+    getStars() {
+      const rating = this.getDataValue('ratingUser')
+
+      if (rating === 5) {
+        return '🌟🌟🌟🌟🌟'
+      } else if (rating === 4) {
+        return '🌟🌟🌟🌟'
+      } else if (rating === 3) {
+        return '🌟🌟🌟'
+      } else if (rating === 2) {
+        return '🌟🌟'
+      } else {
+        return '🌟'
+      }
+    }
+  }
 
   UserRestaurant.init({
     UserId: DataTypes.INTEGER,
@@ -21,9 +37,8 @@ module.exports = (sequelize, DataTypes) => {
             resto.forEach(el => {
               rate += el.ratingUser
             })
-            console.log(rate);
             sum = resto.length
-            return sequelize.models.Restaurant.update({ rating: Math.round(rate / sum) }, { where: { id: userRestaurant.RestaurantId } })
+            return sequelize.models.Restaurant.update({ rating: rate / sum }, { where: { id: userRestaurant.RestaurantId } })
           })
           .then(() => {
             console.log('masuk');

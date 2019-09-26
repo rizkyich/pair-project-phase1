@@ -13,6 +13,10 @@
 
 <body>
 
+
+    <%- include('../partials/navbar', {loginStatus}) %>
+
+
     <br>
     <h3 style="text-align: center"><%=user.username.toUpperCase()%>'S DASHBOARD</h3>
 
@@ -20,7 +24,7 @@
     <br>
     <div class="container">
         <div>
-            <table class="table" style="width: 60%; margin: 0 auto; table-layout: fixed">
+            <table class="table" style="width: 60%; margin: 0 auto; table-layout: fixed;">
                 <thead>
                     <tr>
                     </tr>

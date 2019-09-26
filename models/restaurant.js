@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     latitude: DataTypes.INTEGER,
     longitude: DataTypes.INTEGER,
-    rating: DataTypes.INTEGER,
+    rating: DataTypes.FLOAT,
     photos_url: DataTypes.STRING
   }, {
     sequelize });

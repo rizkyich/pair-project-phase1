@@ -18,6 +18,9 @@
 </head>
 
 <body>
+
+  <%- include('../partials/navbar', { loginStatus })%>
+
   <div class="container">
     <div class="flex">
 
@@ -33,7 +36,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Address : <%= restaurant.address %></li>
           <li class="list-group-item">City : <%= restaurant.city %></li>
-          <li class="list-group-item">Rating : </li>
+          <li class="list-group-item">Rating : <%=restaurant.rating%></li>
         </ul>
         <div class="card-body">
           <a href="/restaurants/<%=restaurant.id%>/reviews/add" class="card-link">Add Review</a>
@@ -68,8 +71,7 @@
       <div class="card-body">
         <blockquote class="blockquote mb-0">
           <p><%=user.dataValues.UserRestaurant.review%></p>
-          <footer class="blockquote-footer">rating : <%=user.dataValues.UserRestaurant.ratingUser%> <cite
-              title="Source Title">stars</cite></footer>
+          <footer class="blockquote-footer">rating : <%=user.dataValues.UserRestaurant.getStars()%> </footer>
         </blockquote>
       </div>
     </div>

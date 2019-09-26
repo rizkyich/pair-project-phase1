@@ -1,20 +1,11 @@
 const { User, UserRestaurant, Restaurant } = require('../models')
 const comparePassword = require('../helpers/comparePassword')
+const isLogin = require('../middlewares/isLogin')
 
 
 
 class UserController {
 
-    static showOne(req, res) {
-        User.findByPk(req.session.id, { include: { model: Restaurant } })
-            .then(user => {
-                res.send(user)
-
-            })
-            .catch(err => {
-                res.send(err)
-            })
-    }
 
     static loginPage(req, res) {
         let err = []
@@ -22,7 +13,12 @@ class UserController {
         if (req.query.err) {
             err = req.query.err.split('_')
         }
-        res.render('users/login', { err, success })
+        let loginStatus = false
+        if (req.session.user) {
+            loginStatus = true
+            err.push('You already login')
+        }
+        res.render('users/login', { err, success, loginStatus })
     }
 
     static login(req, res) {
@@ -43,6 +39,7 @@ class UserController {
 
             .catch(err => {
                 let url = '/user/login?err='
+                console.log(err);
                 err.errors.forEach(error => {
                     url += `${error.message}_`
                 })
@@ -52,11 +49,15 @@ class UserController {
 
     static registerPage(req, res) {
         let err = []
+        let loginStatus = false
+        if (req.session.user) {
+            loginStatus = true
+        }
         let success = req.query.success
         if (req.query.err) {
             err = req.query.err.split('_')
         }
-        res.render('users/register', { err, success })
+        res.render('users/register', { err, success, loginStatus })
     }
 
     static register(req, res) {
@@ -77,7 +78,7 @@ class UserController {
     static dashboard(req, res) {
         User.findByPk(req.session.user.id, { include: [Restaurant] })
             .then(user => {
-                res.render('users/dashboard', { user })
+                res.render('users/dashboard', { user, loginStatus: true })
             })
             .catch(err => {
                 res.send(err)
@@ -88,7 +89,7 @@ class UserController {
             if (err) {
                 res.redirect('/user/dashboard')
             } else {
-                res.redirect('/home?success=logout succesfully.')
+                res.redirect('/')
             }
         })
     }
