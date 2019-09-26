@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       photos_url: {
         type: Sequelize.STRING

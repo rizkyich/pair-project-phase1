@@ -5,7 +5,6 @@ const isLogin = require('../middlewares/isLogin')
 const UserController = require('../controllers/UserController')
 
 
-route.get('/', UserController.showOne)
 
 route.get('/login', UserController.loginPage)
 

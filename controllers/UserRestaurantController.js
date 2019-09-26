@@ -2,7 +2,9 @@ const { UserRestaurant } = require('../models')
 
 class UserRestaurantController {
   static main(req, res) {
-    res.render('restaurants/add')
+    const { id } = req.params
+
+    res.render('restaurants/add', {id})
   }
 
   static addReview(req, res) {

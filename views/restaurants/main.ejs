@@ -18,13 +18,36 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/restaurants">Restaurants</a>
+        <a class="nav-item nav-link" href="/user/dashboard">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
     <div class="center-page">
       <div class="flex">
+        <div>
+          <a href="/restaurants">all</a>|
+          <a href="/restaurants?location=Jakarta">Jakarta</a>|
+          <a href="/restaurants?location=Bandung">Bandung</a>|
+          <a href="/restaurants?location=Bali">Bali</a>|
+        </div>
+      </div>
+      <div class="flex">
         <%restaurants.forEach((restaurant, index) =>{ %>
         <div class="card" style="width: 18rem; margin: 2rem">
-          <div style="height: 65%">
-            <img class="card-img-top"
+          <div style="height: 65%; ">
+            <img class="card-img-top" style="height: 350px; bg-position: center;"
               src="<%= restaurant.photos_url !== ''  ? restaurant.photos_url : 'https://images.unsplash.com/photo-1547424800-ab5e62f6ff8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' %>"
               alt="Card image cap">
           </div>
@@ -33,8 +56,15 @@
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
             <div class="flex">
-              <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-primary">See >></a>
-              <p><%= restaurant.rating %></p>
+              <div>
+                <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-primary">See >></a>
+
+              </div>
+              <div style="margin-left: 2rem">
+                <p>🌟: <%= restaurant.rating %>/5</p>
+                <p>👤: <%=restaurant.dataValues.Users ? restaurant.dataValues.Users.length : 'No review yet'%></p>
+
+              </div>
             </div>
           </div>
         </div>
