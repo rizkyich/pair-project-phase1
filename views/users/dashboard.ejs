@@ -9,9 +9,18 @@
 
 
     <title>Dashboard</title>
+    <!-- <style>
+        body {
+            background-image: url("/img/bg.png")
+        }
+    </style> -->
 </head>
 
 <body>
+
+
+    <%- include('../partials/navbar', {loginStatus}) %>
+
 
     <br>
     <h3 style="text-align: center"><%=user.username.toUpperCase()%>'S DASHBOARD</h3>
@@ -20,7 +29,7 @@
     <br>
     <div class="container">
         <div>
-            <table class="table" style="width: 60%; margin: 0 auto; table-layout: fixed">
+            <table class="table" style="width: 60%; margin: 0 auto; table-layout: fixed;">
                 <thead>
                     <tr>
                     </tr>
@@ -46,10 +55,12 @@
                     <tr>
                         <th scope="row">Reviews</th>
                         <td style="word-wrap: break-word">
-                            <% user.Restaurants.forEach((resto, index)=>{ %>
-                            <h6><a href="/restaurants/<%=resto.id%>/review" style="font-weight: bold; color: brown">
+                            <% user.dataValues.Restaurants.forEach((resto, index)=>{ %>
+                            <h6><a href="/restaurants/<%=resto.id%>/reviews" style="font-weight: bold; color: brown">
                                     <%= resto.name %> </a> </h6>
-                            <h6 style="font-style: italic"> "<%= resto.UserRestaurant.review %>" </h6>
+                            <h6 style="font-style: italic"> "<%= resto.dataValues.UserRestaurant.review %>"</h6>
+                            <a href="/user/dashboard/delete/<%=resto.dataValues.UserRestaurant.id%>"
+                                class="btn btn-sm btn-danger" onclick="return confirm('Delete ?')">Delete</a>
                             <hr>
                             <% }) %>
                         </td>

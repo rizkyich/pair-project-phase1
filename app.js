@@ -21,7 +21,11 @@ app.locals.convertStar = convertStar
 app.locals.dateFormat = dateFormat
 
 app.get('/', (req, res) => {
-  res.render('home')
+  let loginStatus = false
+  if (req.session.user) {
+    loginStatus = true
+  }
+  res.render('home', { loginStatus })
 })
 
 app.use('/restaurants', require('./routes/RestaurantRoute'))

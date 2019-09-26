@@ -21,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   UserRestaurant.init({
+    id :{
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     UserId: DataTypes.INTEGER,
     RestaurantId: DataTypes.INTEGER,
     review: DataTypes.STRING,
@@ -34,6 +39,27 @@ module.exports = (sequelize, DataTypes) => {
         UserRestaurant
           .findAll({ where: { RestaurantId: userRestaurant.RestaurantId } })
           .then(resto => {
+            resto.forEach(el => {
+              rate += el.ratingUser
+            })
+            sum = resto.length
+            return sequelize.models.Restaurant.update({ rating: rate / sum }, { where: { id: userRestaurant.RestaurantId } })
+          })
+          .then(() => {
+            console.log('masuk');
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      },
+      afterDestroy: (userRestaurant) => {
+        console.log(userRestaurant)
+        let sum
+        let rate = 0
+        UserRestaurant
+          .findAll({ where: { RestaurantId: userRestaurant.RestaurantId } })
+          .then(resto => {
+            console.log(resto)
             resto.forEach(el => {
               rate += el.ratingUser
             })

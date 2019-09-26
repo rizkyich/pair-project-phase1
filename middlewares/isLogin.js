@@ -1,8 +1,8 @@
 function isLogin(req, res, next) {
-    if (req.session.id) {
+    if (req.session.user) {
         next()
     } else {
-        res.redirect('/?err=you have to login first')
+        res.redirect('/user/login')
     }
 }
 
