@@ -42,7 +42,7 @@
           <a href="/restaurants/<%=restaurant.id%>/reviews/add" class="card-link">Add Review</a>
         </div>
       </div>
-      <div class="map">
+      <div class="map" style="margin-left: 1em">
         <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDZNuv0M8wfRCTAWLVUKHWNKZAWRB60WBI
             &q=<%= restaurant.latitude + ',' + restaurant.longitude%>" allowfullscreen>
         </iframe>
@@ -66,11 +66,11 @@
     <% restaurant.dataValues.Users.forEach(user => {%>
     <div class="card">
       <div class="card-header">
-        <%=user.username %>
+        <h5 style="color: maroon; text-emphasis: strong;"><%=user.username %></h5>
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
-          <p><%=user.dataValues.UserRestaurant.review%></p>
+          <p style="font-style: italic">"<%=user.dataValues.UserRestaurant.review%>"</p>
           <footer class="blockquote-footer">rating : <%=user.dataValues.UserRestaurant.getStars()%> </footer>
         </blockquote>
       </div>
