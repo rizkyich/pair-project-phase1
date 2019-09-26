@@ -51,7 +51,7 @@
                         <th scope="row">Reviews</th>
                         <td style="word-wrap: break-word">
                             <% user.Restaurants.forEach((resto, index)=>{ %>
-                            <h6><a href="/restaurants/<%=resto.id%>/review" style="font-weight: bold; color: brown">
+                            <h6><a href="/restaurants/<%=resto.id%>/reviews" style="font-weight: bold; color: brown">
                                     <%= resto.name %> </a> </h6>
                             <h6 style="font-style: italic"> "<%= resto.UserRestaurant.review %>" </h6>
                             <hr>
