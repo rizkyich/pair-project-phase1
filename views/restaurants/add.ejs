@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <%- include('../partials/navbar', { loginStatus })%>
+
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5>Share Your Honest Review!</h5>
+            <form method="POST">
+              <div class="form-group">
+                <label for="first_name">Review</label>
+                <input type="text-area" class="form-control" name="review">
+              </div>
+              <div class="form-group">
+
+                <select name="ratingUser" id="SubjectId" class="form-control">
+                  <% for(let i = 0; i < 5; i++) { %>
+                  <option value="<%= i+1 %>"><%= convertStar(i+1) %></option>
+                  <% } %>
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-info">Save</button>
+              </div>
+            </form>
+            <div>
+              <a href="/restaurants/<%=id%>/reviews/" class="btn btn-sm btn-danger">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

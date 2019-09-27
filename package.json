@@ -1,19 +1,30 @@
 {
   "name": "zomato-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "express-session": "^1.16.2",
     "pg": "^7.12.1",
     "sequelize": "^5.19.0",
     "zomato.js": "^1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizkyich/pair-project-phase1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rizkyich/pair-project-phase1/issues"
+  },
+  "homepage": "https://github.com/rizkyich/pair-project-phase1#readme",
+  "description": ""
 }

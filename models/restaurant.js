@@ -4,9 +4,14 @@ module.exports = (sequelize, DataTypes) => {
 
   class Restaurant extends Model {
     static getByLoc(location) {
-      return Restaurant.findAll({where: {city: locations}})   
-    }
 
+      return Restaurant.findAll({ where: { city: location } , 
+        include: [{
+          model: sequelize.models.User
+        }]
+      })
+
+    }
   }
 
   Restaurant.init({
@@ -15,11 +20,15 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     latitude: DataTypes.INTEGER,
     longitude: DataTypes.INTEGER,
-    rating: DataTypes.INTEGER,
+    rating: DataTypes.FLOAT,
     photos_url: DataTypes.STRING
-  }, { sequelize });
+  }, {
+    sequelize
+  });
   Restaurant.associate = function (models) {
     // associations can be defined here
+
+    Restaurant.belongsToMany(models.User, { through: models.UserRestaurant })
   };
   return Restaurant;
 };

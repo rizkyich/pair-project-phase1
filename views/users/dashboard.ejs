@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include('../partials/bootstrap') %>
+
+
+    <title>Dashboard</title>
+    <!-- <style>
+        body {
+            background-image: url("/img/bg.png")
+        }
+    </style> -->
+</head>
+
+<body>
+
+
+    <%- include('../partials/navbar', {loginStatus}) %>
+
+
+    <br>
+    <h3 style="text-align: center"><%=user.username.toUpperCase()%>'S DASHBOARD</h3>
+
+
+    <br>
+    <div class="container">
+        <div>
+            <table class="table" style="width: 60%; margin: 0 auto; table-layout: fixed;">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Username</th>
+                        <td><%=user.username%></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td><%=user.email%></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Phone</th>
+                        <td><%=user.phone%></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Joined since</th>
+                        <td><%=dateFormat(user.createdAt) %></td>
+                    </tr>
+                    <hr>
+                    <tr>
+                        <th scope="row">Reviews</th>
+                        <td style="word-wrap: break-word">
+                            <% user.dataValues.Restaurants.forEach((resto, index)=>{ %>
+                            <h6><a href="/restaurants/<%=resto.id%>/reviews" style="font-weight: bold; color: brown">
+                                    <%= resto.name %> </a> </h6>
+                            <h6 style="font-style: italic"> "<%= resto.dataValues.UserRestaurant.review %>"</h6>
+                            <a href="/user/dashboard/delete/<%=resto.dataValues.UserRestaurant.id%>"
+                                class="btn btn-sm btn-danger" onclick="return confirm('Delete ?')">Delete</a>
+                            <hr>
+                            <% }) %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
