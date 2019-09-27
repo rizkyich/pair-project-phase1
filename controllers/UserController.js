@@ -22,29 +22,37 @@ class UserController {
     }
 
     static login(req, res) {
-        User.findOne({ where: { email: req.body.email }, include: [Restaurant] })
-            .then(user => {
-                if (comparePassword(req.body.password, user.password)) {
-                    req.session.user = {
-                        id: user.id,
-                        username: user.username,
-                        email: user.email,
-                        phone: user.phone
-                    }
-                    res.redirect('/user/dashboard')
-                } else {
-                    res.redirect('/user/login?err=wrong username or password')
-                }
-            })
+        if(!req.body.email && !req.body.password) {
+            res.redirect('/user/login?err=Input please!')
+        } else {
 
-            .catch(err => {
-                let url = '/user/login?err='
-                console.log(err);
-                err.errors.forEach(error => {
-                    url += `${error.message}_`
+            User.findOne({ where: { email: req.body.email }, include: [Restaurant] })
+                .then(user => {
+    
+                    if (comparePassword(req.body.password, user.password)) {
+                        req.session.user = {
+                            id: user.id,
+                            username: user.username,
+                            email: user.email,
+                            phone: user.phone
+                        }
+                        res.redirect('/user/dashboard')
+                    } else {
+                        res.redirect('/user/login?err=wrong username or password')
+                    }
                 })
-                res.redirect(url)
-            })
+    
+                .catch(err => {
+                    let url = '/user/login?err='
+                    console.log(err);
+                    err.errors.forEach(error => {
+                        url += `${error.message}_`
+                    })
+                    res.redirect(url)
+                })
+        }
+        console.log(req.body)
+
     }
 
     static registerPage(req, res) {

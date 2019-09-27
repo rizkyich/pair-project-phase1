@@ -24,23 +24,38 @@
 
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    .box{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
   </style>
 </head>
 
 <body>
   <%- include('../partials/navbar', { loginStatus })%>
+  
+  <div class="dropdown box" style="margin:2.5rem;">
+    <a class="btn btn-danger btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter Restaurants:
+    </a>
 
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item"  href="/restaurants">All</a>
+        <a class="dropdown-item"  href="/restaurants?location=Jakarta">Jakarta</a>
+        <a class="dropdown-item"  href="/restaurants?location=Bandung">Bandung</a>
+        <a class="dropdown-item"  href="/restaurants?location=Bali">Bali</a>
+        <a href="restaurants/topRate"
+          class="dropdown-item">Top Rated 🌟</a>
+    </div>
+  </div>
   <div class="container">
     <div class="center-page">
-      <div class="flex">
+      <div class="flex" style="margin: 1rem;">
         <div>
-          <a href="/restaurants">all</a>|
-          <a href="/restaurants?location=Jakarta">Jakarta</a>|
-          <a href="/restaurants?location=Bandung">Bandung</a>|
-          <a href="/restaurants?location=Bali">Bali</a>|
+          
         </div>
-        <div>
-          <a href="<%= location ? `restaurants?location=${location}/topRate` : 'restaurants/topRate'%>" class="btn btn-sm btn-primary">Top Rated</a>
+        <div class="flex">
         </div>
       </div>
       <div class="flex">
@@ -57,7 +72,7 @@
               content.</p>
             <div class="flex">
               <div>
-                <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-primary">See >></a>
+                <a href="/restaurants/<%= restaurant.id %>/reviews" class="btn btn-danger">See >></a>
 
               </div>
               <div style="margin-left: 2rem">
